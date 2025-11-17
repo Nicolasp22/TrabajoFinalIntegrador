@@ -159,6 +159,7 @@ public class MenuHandler {
                 if (!productos.isEmpty()) {
                     for (Producto p : productos) {
                         System.out.println(p);
+                        System.out.println("====================================");
                     }
                 }else{
                     System.out.println("No se encontraron productos con ese nombre.");
