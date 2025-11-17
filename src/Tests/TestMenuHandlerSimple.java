@@ -33,9 +33,9 @@ public class TestMenuHandlerSimple {
         try {
             // Esto debería fallar
             new MenuHandler(null, null);
-            System.out.println("❌ ERROR: Debio fallar con scanner null");
+            System.out.println("ERROR: Debio fallar con scanner null");
         } catch (IllegalArgumentException e) {
-            System.out.println("✅ OK: Constructor detecta scanner null - " + e.getMessage());
+            System.out.println("OK: Constructor detecta scanner null - " + e.getMessage());
         }
     }
 
@@ -58,15 +58,15 @@ public class TestMenuHandlerSimple {
             CodigoBarras codigo = handler.crearCodigoBarras();
 
             if (codigo != null) {
-                System.out.print("✅ OK: Codigo creado - Valor: " + codigo.getValor() + ", Tipo: " + codigo.getTipoId() + ", idcodigo: " + codigo.getId());
+                System.out.print("OK: Codigo creado - Valor: " + codigo.getValor() + ", Tipo: " + codigo.getTipoId() + ", idcodigo: " + codigo.getId());
                 System.out.println("");
             } else {
-                System.out.print("❌ ERROR: Codigo es null");
+                System.out.print("ERROR: Codigo es null");
                 System.out.println("");
             }
 
         } catch (Exception e) {
-            System.out.print("❌ ERROR: " + e.getMessage());
+            System.out.print("ERROR: " + e.getMessage());
             System.out.println("");
             // e.printStackTrace(); // Comentado para que no ensucie la salida
         }
@@ -87,11 +87,11 @@ public class TestMenuHandlerSimple {
             System.out.println("");
             MenuHandler handler = new MenuHandler(scanner, pService);
             handler.listarProductos();
-            System.out.println("✅ OK: Listar productos funciono");
+            System.out.println("OK: Listar productos funciono");
             System.out.println("");
 
         } catch (Exception e) {
-            System.out.println("❌ ERROR en listar: " + e.getMessage());
+            System.out.println("ERROR en listar: " + e.getMessage());
         }
     }
 
@@ -113,14 +113,14 @@ public class TestMenuHandlerSimple {
 
             MenuHandler handler = new MenuHandler(scanner, pService);
 
-            System.out.println("✅ Iniciando creacion de producto...");
+            System.out.println("Iniciando creacion de producto...");
             System.out.println("");
             handler.crearProducto();
-            System.out.println("✅ OK: Flujo de crear producto completado");
+            System.out.println("OK: Flujo de crear producto completado");
             System.out.println("");
 
         } catch (Exception e) {
-            System.out.println("❌ ERROR en crear producto: " + e.getMessage());
+            System.out.println("ERROR en crear producto: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -140,10 +140,10 @@ public class TestMenuHandlerSimple {
 
             MenuHandler handler = new MenuHandler(scanner, pService);
             handler.buscarPorNombre();
-            System.out.println("✅ OK: Busqueda completada");
+            System.out.println("OK: Busqueda completada");
 
         } catch (Exception e) {
-            System.out.println("❌ ERROR en busqueda: " + e.getMessage());
+            System.out.println("ERROR en busqueda: " + e.getMessage());
         }
     }
 
@@ -176,9 +176,9 @@ public class TestMenuHandlerSimple {
 
             MenuHandler handler = new MenuHandler(scanner, pService);
             handler.crearProducto();
-            System.out.println("❌ " + descripcion + " - Debio fallar");
+            System.out.println(descripcion + " - Debio fallar");
         } catch (Exception e) {
-            System.out.println("✅ " + descripcion + " - Error manejado: " + e.getMessage());
+            System.out.println(descripcion + " - Error manejado: " + e.getMessage());
         }
     }
 }

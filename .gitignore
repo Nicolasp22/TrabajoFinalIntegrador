@@ -20,3 +20,4 @@ Config/DatabaseConnection.java
 *.tar.gz
 *.rar
 *.log
+/TrabajoFinalIntegrador/nbproject/private/

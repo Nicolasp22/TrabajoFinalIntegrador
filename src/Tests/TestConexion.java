@@ -12,10 +12,10 @@ public class TestConexion {
     public static void main(String[] args) {
         try (Connection conn = DatabaseConnection.getConnection()) {
             if (conn != null && !conn.isClosed()) {
-                System.out.println("✅ Conexion EXITOSA");
+                System.out.println("Conexion EXITOSA");
             }
         } catch (Exception e) {
-            System.out.println("❌ Error de conexion");
+            System.out.println("Error de conexion");
             e.printStackTrace();
         }
     }

@@ -37,11 +37,11 @@ public static void main(String[] args) {
 
         service.crearProductoConCodigo(p, cb);
 
-        System.out.println("✅ OK: Producto creado con ID: " + p.getId());
-        System.out.println("✅ Código de barras creado con ID: " + cb.getId());
+        System.out.println("OK: Producto creado con ID: " + p.getId());
+        System.out.println("Código de barras creado con ID: " + cb.getId());
 
     } catch (Exception e) {
-        System.err.println("❌ Error: " + e.getMessage());
+        System.err.println("Error: " + e.getMessage());
         e.printStackTrace();
     }
 }
