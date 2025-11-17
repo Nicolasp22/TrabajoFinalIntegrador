@@ -74,8 +74,9 @@ public class MenuHandler {
             CodigoBarras codigoBarras = crearCodigoBarras();
 
             Producto producto = new Producto(nombre, precio, peso, idCategoria, idMarca, codigoBarras); // aca usamos el getid de cogiobarras porque no lo recibimos a mano, es algo que nos da sql en este caso
-//            Producto producto = new Producto();// aca usamos contructor vacio para no tener que mandar el id_codigo que todavia no tenemos. DEspues lo construimos abajo mediante gets. 
-            productoService.crearProductoConCodigo(producto, codigoBarras);
+            
+            productoService.crearProductoConCodigo(producto,codigoBarras);
+            
             System.out.println("Producto creado exitosamente con ID: " + producto.getId());
         } catch (Exception e) {
             System.err.println("Error al crear producto: " + e.getMessage());
@@ -146,39 +147,40 @@ public class MenuHandler {
             System.err.println("Error al eliminar persona: " + e.getMessage());
         }
     }
-
-    public void buscarPorNombre() {
-        List<Producto> productos;
-        try {
-            System.out.print("Ingrese texto a buscar: ");
-            String nombre = scanner.nextLine().trim();
-            productos = productoService.buscarPorNombre(nombre);
-
-            if (!productos.isEmpty()) {
-                for (Producto p : productos) {
-                    System.out.println(p);
-                    System.out.println("====================");
+        
+        
+        public void buscarPorNombre(){
+            List<Producto> productos;
+            try{
+                System.out.print("Ingrese texto a buscar: ");
+                String nombre = scanner.nextLine().trim();
+                productos = productoService.buscarPorNombre(nombre);
+                
+                if (!productos.isEmpty()) {
+                    for (Producto p : productos) {
+                        System.out.println(p);
+                    }
+                }else{
+                    System.out.println("No se encontraron productos con ese nombre.");
                 }
-            } else {
-                System.out.println("No se encontraron productos con ese nombre.");
+            }catch(SQLException e) {
+                System.out.println("Error de base de datos al buscar productos." + e.getMessage());
+            }catch(Exception ex){
+                System.out.println("Error al realizar la búsqueda" + ex.getMessage());
             }
-        } catch (SQLException e) {
-            System.out.println("Error de base de datos al buscar productos." + e.getMessage());
-        } catch (Exception ex) {
-            System.out.println("Error al realizar la búsqueda" + ex.getMessage());
+            
         }
+        
+        
+        public CodigoBarras crearCodigoBarras(){
+             try{
+                // Solicitar el valor del código de barras
+                System.out.print("Valor del codigo de barras(8 - 20 digitos): ");
+                String valor = scanner.nextLine().trim();
 
-    }
-
-    public CodigoBarras crearCodigoBarras() {
-        try {
-            // Solicitar el valor del código de barras
-            System.out.print("Valor del codigo de barras(minimo 8 digitos): ");
-            String valor = scanner.nextLine().trim();
-
-            if (valor.isEmpty()) {
-                throw new IllegalArgumentException("El valor del codigo de barras no puede estar vacio.");
-            }
+                if (valor.isEmpty() || valor.length() < 8 || valor.length() > 20 ) {
+                    throw new IllegalArgumentException("El valor del codigo de barras debe tener entre 8 y 20 digitos.");
+                }
 
             // Solicitar el tipo de código de barra 
             TipoCodigoBarras.mostrarOpciones();

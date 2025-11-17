@@ -55,6 +55,7 @@ public class ProductoServiceImp implements GenericService<Producto> {
             } catch (SQLException e) {
                 System.err.println("Ocurrio un SQLException. Se hace rollback");
                 conn.rollback();
+                System.err.println("Rollback");
                 throw e;
 
             } catch (Exception e) {

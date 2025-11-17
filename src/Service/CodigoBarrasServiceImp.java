@@ -89,9 +89,9 @@ public class CodigoBarrasServiceImp implements GenericService<CodigoBarras> {
         }
 
         // VALIDACION ONLINE de valor del codigo de barras
-        if (codigoBarrasDAO.existe(valor)) {
-            throw new SQLException("El codigo de barras ya existe en el sistema");
-        }
+   //     if (codigoBarrasDAO.existe(valor)) {
+     //       throw new SQLException("El codigo de barras ya existe en el sistema");
+     //   }
     }
 
 }

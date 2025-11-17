@@ -4,6 +4,9 @@
 /nbproject/private/
 /nbproject/project.properties
 /nbproject/project.xml
+/manifest.mf
+/build.xml
+/nbproject
 
 # Archivo de configuración con credenciales
 Config/DatabaseConnection.java
