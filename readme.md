@@ -9,7 +9,7 @@ El proyecto implementa un sistema CRUD (Crear, Leer, Actualizar, Borrar) para ge
 
 ## Integrantes
 
-* *Matias Orellana:* Arquitectura, Capa Service y DAO.
+* *Matias:* Arquitectura, Capa Service y DAO.
 * *Fernando:* Handler, Diseno de Base de Datos y Capa DAO.
 * *Nicolas:* Desarrollo de Capa de Presentacion - Menu,.
 * *Rodrigo:* Base de datos, Pruebas y Documentacion.
