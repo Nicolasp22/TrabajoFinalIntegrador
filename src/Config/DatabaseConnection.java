@@ -27,7 +27,7 @@ public final class DatabaseConnection {
     /**
      * Password del usuario. Configurable via -Ddb.password
      */
-    private static final String PASSWORD = System.getProperty("db.password", "nicolas02");
+    private static final String PASSWORD = System.getProperty("db.password", "");
 
     static {
         try {
