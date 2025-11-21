@@ -42,7 +42,7 @@ Estos son los pasos para levantar el proyecto desde cero en una computadora nuev
 
 ### 2. Configurar el Proyecto en NetBeans
 
-1.  Abre el proyecto (la carpeta TrabajoFinalIntegrador) en NetBeans.
+1.  Abre el proyecto (la carpeta src) en NetBeans.
 2.  *Importante: Agrega el Driver de MySQL:*
     * Haz clic derecho sobre el nombre del proyecto (en el panel izquierdo).
     * Ve a *Properties* (Propiedades).
@@ -51,14 +51,9 @@ Estos son los pasos para levantar el proyecto desde cero en una computadora nuev
     * Busca el archivo mysql-connector-j-X.X.XX.jar que descargaste y agregalo.
 
 ### 3. Configurar tu Conexion Local
-
-*IMPORTANTE:* El archivo de conexion (DatabaseConnection.java) no se sube a GitHub para proteger las contrasenas. Cada miembro del equipo debe crear el suyo.
-
-1.  En NetBeans, ve a la carpeta src/Config/.
-2.  Veras un archivo llamado DatabaseConnection.java.template (o similar).
-3.  Crea una *COPIA* de este archivo en la misma carpeta (src/Config/).
-4.  Renombra esa copia a: DatabaseConnection.java
-5.  Abre el nuevo DatabaseConnection.java y asegurate de que los datos de tu MySQL local sean correctos. Si usas XAMPP por defecto, deberia ser asi:
+En NetBeans, andá al paquete Config y seleccioná el archivo DatabaseConnection.java
+Dentro de la clase DatabaseConnection, rellená las variables USER y PASSWORD con tu usuario y contraseña reales de MySQL (si usás XAMPP, suele ser usuario "root" y contraseña vacía "").
+Guardá los cambios y listo. Si usas XAMPP por defecto, deberia ser asi:
 
     java
     // ...
@@ -81,9 +76,8 @@ Estos son los pasos para levantar el proyecto desde cero en una computadora nuev
 Si queres verificar que todo funciona rapido sin usar el menu, podes correr los tests:
 
 * *Test de Conexion:* src/Tests/TestConexion.java (Verifica solo la conexion).
-* *Test de Validaciones:* src/Tests/TestValidaciones.java (Verifica que los Enums carguen bien).
-* *Test del Flujo (E2E):* src/Tests/TestMenuHandlerSimple.java (Prueba el flujo de crear y listar).
-
+* *Test del Flujo (E2E):* src/Tests/TestMenuHandlerSimple.java y TestProductoServiceImp.java (Prueba el flujo de crear y listar).
+* *Test de inserción individual:* src/Tests/TestProductoServiceImp.java (prueba el Insert de un nuevo producto mediante llamado al service).
 ---
 
 ## Video de Demostracion
