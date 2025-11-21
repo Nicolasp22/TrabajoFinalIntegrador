@@ -82,7 +82,6 @@ Si queres verificar que todo funciona rapido sin usar el menu, podes correr los 
 
 * *Test de Conexion:* src/Tests/TestConexion.java (Verifica solo la conexion).
 * *Test de Validaciones:* src/Tests/TestValidaciones.java (Verifica que los Enums carguen bien).
-* *Test de Transacciones (Rollback):* src/Tests/TestRollbackCorregido.java (Prueba que el rollback funcione).
 * *Test del Flujo (E2E):* src/Tests/TestMenuHandlerSimple.java (Prueba el flujo de crear y listar).
 
 ---
